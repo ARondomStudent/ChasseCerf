@@ -4,6 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
+        int fleches = 5;
+        int nTouche = 0;
+        do
+        {
+            bool touche = Random.Shared.Next(0, 2) == 1;
+            Console.WriteLine("Fleches restante : " + fleches);
+            Console.WriteLine("Résultat du tir (touche/rate) : "+ touche);
+            if (touche)
+            {
+                nTouche++;
+                Console.WriteLine("Bien joué ! Le cerf est touché.");
+            }
+            else
+            {
+                Console.WriteLine("Raté ! Le cerf s'est échappé de justesse.");
+            }
+            fleches--;
+        }while((fleches > 0) && (nTouche != 3));
+
+        if (nTouche == 3)
+        {
+            Console.WriteLine("Vous avez battu le cerf");
+        }
         /*
         Arthur dispose de 5 flèches pour chasser un cerf.
 
